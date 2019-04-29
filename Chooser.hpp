@@ -1,8 +1,8 @@
 #pragma once
 #include <iostream>
-#include <string>
-#include "calculate.hpp"
 using namespace std;
+// #include "calculate.hpp"
+
 
 
 
@@ -11,9 +11,8 @@ namespace bullpgia
 class Chooser
 {
     public:
-    Chooser();
-
-    virtual string choose(uint length);
+    
+    virtual string choose(uint length)=0;
     
 };
 }; // namespace bullpgia

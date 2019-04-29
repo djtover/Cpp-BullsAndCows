@@ -1,22 +1,21 @@
 #pragma once
 #include <iostream>
 #include <string>
-using  std::string;
+#include "calculate.hpp"
+using namespace std;
 
 namespace bullpgia
 {
-
 class Guesser
 {
-    // private:
-    // uint length;
-
+    protected:
+uint length;
     public:
-    uint length;
+    // uint length;
     Guesser();
     void startNewGame(uint length);
 
     virtual string guess();
-    void learn(int reply);
+    virtual void learn(int bp);
 };
 }; // namespace bullpgia

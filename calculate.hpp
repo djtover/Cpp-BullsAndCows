@@ -1,22 +1,18 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "Guesser.hpp"
-#include "Chooser.hpp"
+using namespace std;
 
-// using namespace std;
-using std::string;
+
 
 namespace bullpgia
 {
 
-class calculate
-{
+  
+    int calculateBullAndPgia(string choice, string guess){
+        cout<< "hello"<<endl;
+        return 0;
+    }
     
 
-    public:
-    int calculateBullAndPgia(string choice, string guess);
-
-};
-}; 
-
+}; // namespace bullpgia

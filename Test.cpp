@@ -14,12 +14,13 @@ using namespace std;
 #include "DummyGuessers.hpp"
 #include "SmartGuesser.hpp"
 #include "badkan.hpp"
+// #include "calculate.hpp"
 #define COMMA ,
 
 using namespace bullpgia;
 
 int main() {
-
+	
 	badkan::TestCase testcase;
 	int grade=0;
 	int signal = setjmp(badkan::longjmp_buffer);

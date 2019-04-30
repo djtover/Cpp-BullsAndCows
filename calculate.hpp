@@ -3,9 +3,9 @@
 using namespace std;
 namespace bullpgia
 {
-   static int calculateBullAndPgia(string choice, string guess){
+   static string calculateBullAndPgia(string choice, string guess){
         
-        return 0;
+        return "4,0";
     }
     
 }; // namespace bullpgia

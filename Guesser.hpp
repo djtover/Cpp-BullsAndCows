@@ -13,6 +13,6 @@ class Guesser
     
     void startNewGame(uint Length){}
     virtual string guess()=0;
-    void learn(int reply){}
+    void learn(string reply){}
 };
 }; // namespace bullpgia

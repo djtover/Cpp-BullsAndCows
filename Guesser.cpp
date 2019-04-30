@@ -4,7 +4,7 @@
 #include "Guesser.hpp"
 using std::string;
 namespace bullpgia{
-    void Guesser::learn(int reply){
+    void Guesser::learn(string reply){
 
     }
 };

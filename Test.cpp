@@ -23,6 +23,8 @@ int main() {
 	
 	badkan::TestCase testcase;
 	int grade=0;
+	int right=0;
+	int wrong = 0;
 	int signal = setjmp(badkan::longjmp_buffer);
 	if (signal == 0) {
 
@@ -49,12 +51,63 @@ int main() {
 			testcase.CHECK_EQUAL(play(randy, smarty, 4, 100)<=100, true);  // smarty should always win in at most 10 turns!
 		}
 
+		// My tests
+		testcase.setname("valid input for calculate for just bulls")
+		.CHECK_OUTPUT(calculateBullAndPgia("1234","1234"), "4,0")      
+		.CHECK_OUTPUT(calculateBullAndPgia("1234","1111"), "1,0") 
+	  .CHECK_OUTPUT(calculateBullAndPgia("1234","1256"), "2,0")
+		.CHECK_OUTPUT(calculateBullAndPgia("1234","1235"), "3,0")
+		.CHECK_OUTPUT(calculateBullAndPgia("1234","5674"), "1,0")
+		.CHECK_OUTPUT(calculateBullAndPgia("1234","5634"), "2,0")
+		.CHECK_OUTPUT(calculateBullAndPgia("1234","5234"), "3,0")
+		;
+		testcase.setname("valid input for calculate for just cows")
+		.CHECK_OUTPUT(calculateBullAndPgia("1234","4321"), "0,4") 
+		.CHECK_OUTPUT(calculateBullAndPgia("1234","4325"), "0,3")
+		.CHECK_OUTPUT(calculateBullAndPgia("1234","4356"), "0,2")
+		.CHECK_OUTPUT(calculateBullAndPgia("1234","4567"), "0,1")
+		.CHECK_OUTPUT(calculateBullAndPgia("1234","5467"), "0,1")
+		.CHECK_OUTPUT(calculateBullAndPgia("1234","5426"), "0,2")
+		.CHECK_OUTPUT(calculateBullAndPgia("1234","5421"), "0,3")
+		.CHECK_OUTPUT(calculateBullAndPgia("1234","3421"), "0,4")
+		;
+		testcase.setname("valid input for calculate for bulls and cows")
+		.CHECK_OUTPUT(calculateBullAndPgia("1234","1324"), "2,2")
+		.CHECK_OUTPUT(calculateBullAndPgia("1234","4231"), "2,2")
+		.CHECK_OUTPUT(calculateBullAndPgia("1234","1243"), "2,2")
+		.CHECK_OUTPUT(calculateBullAndPgia("1234","1423"), "1,3")
+		.CHECK_OUTPUT(calculateBullAndPgia("1234","4213"), "1,3")
+		.CHECK_OUTPUT(calculateBullAndPgia("1234","4132"), "1,3")
+		.CHECK_OUTPUT(calculateBullAndPgia("1234","3124"), "1,3")
+		;
+		testcase.setname("valid input for calculate for bulls and cows")
+		.CHECK_THROWS(calculateBullAndPgia("1234","123a"))
+		.CHECK_THROWS(calculateBullAndPgia("1234","123"))
+		.CHECK_THROWS(calculateBullAndPgia("123a","1234"))
+		;
+
+		testcase.setname("valid input for choose")
+		.CHECK_OUTPUT(c1234.choose(4),"1234")
+		.CHECK_OUTPUT(c12345.choose(5),"12345")
+		.CHECK_OUTPUT(c9999.choose(4),"9999")
+		;
+
+		testcase.setname("valid input for guesser")
+		.CHECK_OUTPUT(g1234.guess(),"1234")
+		.CHECK_OUTPUT(g12345.guess(),"12345")
+		.CHECK_OUTPUT(g9999.guess(),"9999")
+		;
+
+
+ 
     grade = testcase.grade();
+		right = testcase.right();
+		wrong = testcase.wrong();
 	} else {
 		testcase.print_signal(signal);
 		grade = 0;
 	}
-	cout << "Your grade is: "  << grade << endl;
+	cout << "\nYour grade is: "  << grade <<"\nRight: "<< right << "\nWrong: "<< wrong <<endl;
 	return 0;
 }
 

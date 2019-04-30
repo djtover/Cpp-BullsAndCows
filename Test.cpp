@@ -136,6 +136,25 @@ int main() {
 		.CHECK_OUTPUT(g9999.guess(),"9999")
 		;
 
+		testcase.setname("testing smartguesser within 34 guesses");
+		for (uint i=0; i<100; ++i) {
+			testcase.CHECK_EQUAL(play(randy, smarty, 4, 34)<=34, true);  // smarty should always win in at most 10 turns!
+		}
+
+		testcase.setname("testing smartguesser within 16 guesses");
+		for (uint i=0; i<100; ++i) {
+			testcase.CHECK_EQUAL(play(randy, smarty, 3, 16)<=16, true);  // smarty should always win in at most 10 turns!
+		}
+		testcase.setname("testing smartguesser within 14 guesses");
+		for (uint i=0; i<100; ++i) {
+			testcase.CHECK_EQUAL(play(randy, smarty, 2, 14)<=14, true);  // smarty should always win in at most 10 turns!
+		}
+		testcase.setname("testing smartguesser within 10 guesses");
+		for (uint i=0; i<100; ++i) {
+			testcase.CHECK_EQUAL(play(randy, smarty, 1, 10)<=10, true);  // smarty should always win in at most 10 turns!
+		}
+		
+
 
  
     grade = testcase.grade();

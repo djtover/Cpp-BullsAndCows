@@ -4,22 +4,22 @@ using namespace std;
 namespace bullpgia
 {
    
-  static void calculateExceptions(string choice,string guess){
-int i;
-    if(guess.length() != choice.length()){
-        throw "Different lengths";
-    }
-    for(i=0;i<guess.length();i++){
-        if(guess.at(i)<'0' || guess.at(i)>'9'){
-            throw "Invalid option in guess";
-        }
-    }
-     for(i=0;i<choice.length();i++){
-        if(choice.at(i)<'0' || choice.at(i)>'9'){
-            throw "Invalid option in choice";
-        }
-    }
-    }
+//   static void calculateExceptions(string choice,string guess){
+// int i;
+//     if(guess.length() != choice.length()){
+//         throw "Different lengths";
+//     }
+//     for(i=0;i<guess.length();i++){
+//         if(guess.at(i)<'0' || guess.at(i)>'9'){
+//             throw "Invalid option in guess";
+//         }
+//     }
+//      for(i=0;i<choice.length();i++){
+//         if(choice.at(i)<'0' || choice.at(i)>'9'){
+//             throw "Invalid option in choice";
+//         }
+//     }
+//     }
 static string calculateBullAndPgia(string choice, string guess)
 {  
     int bull = 0;
@@ -28,7 +28,7 @@ static string calculateBullAndPgia(string choice, string guess)
     int j;
     int arrChoice[choice.length()];
     int arrGuess[guess.length()];
-    calculateExceptions(choice,guess);
+    // calculateExceptions(choice,guess);
     // if(guess.length() != choice.length()){
     //     throw "Different lengths";
     // }

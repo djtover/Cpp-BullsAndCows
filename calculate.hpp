@@ -4,6 +4,7 @@ using namespace std;
 namespace bullpgia
 {
    
+
 static string calculateBullAndPgia(string choice, string guess)
 {  
     int bull = 0;

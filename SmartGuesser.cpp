@@ -5,7 +5,7 @@
 using std::string;
 namespace bullpgia
 {
-
+// This is method for the first 10 guesses to get the amount of bulls for each digit
 string SmartGuesser::switchCase()
 {
     string ans = "";
@@ -88,6 +88,7 @@ string SmartGuesser::switchCase()
     }
     return ans;
 }
+// this is the learn method which takes in a string and converts it to the amounts of bulls and pgiot
 void SmartGuesser::learn(string reply)
 {
     int i = reply.find(",");
@@ -100,13 +101,16 @@ void SmartGuesser::learn(string reply)
         count[size-1]=cbull;
     }
 }
+// Guess method
 string SmartGuesser::guess()
 {
+    // Less than 10 guesses
     string ans="";
     if (size < 10)
     {
         ans = switchCase();
     }
+    // 11th guess
     else if(size==10){
         for(int i=0; i<10;i++){
             for(int j=0;j<count[i];j++){
@@ -117,6 +121,7 @@ string SmartGuesser::guess()
         }
           
     }
+    // More than 11 guesses
     else{
         if(cbull > bbull){
             best = current;
@@ -142,6 +147,7 @@ string SmartGuesser::guess()
     size++;
     return current;
 }
+// Start new game method which restarts all the values
 void SmartGuesser::startNewGame(uint Length)
 {
     best = "";

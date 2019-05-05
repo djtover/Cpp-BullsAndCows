@@ -138,20 +138,19 @@ string SmartGuesser::guess()
                 start++;
                 end = start + 1;
             }
-            // cout<<"hello"<<endl;
+           
         }
         if(end < length){
-            // ans = best;
+            
             std::swap(ans[start], ans[end]);
             end++;
         }
         else{
             start++;
             end = start + 1;
-            // ans = best;
+            
             std::swap(ans[start], ans[end]);
-            // start++;
-            // end = start + 1;
+            end++;
         }
 
     }

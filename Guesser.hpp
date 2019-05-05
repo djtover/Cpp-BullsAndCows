@@ -11,8 +11,8 @@ class Guesser
    uint length;
     public:
     
-    void startNewGame(uint Length){}
+    virtual void startNewGame(uint Length){}
     virtual string guess()=0;
-    void learn(string reply){}
+    virtual void learn(string reply){}
 };
 }; // namespace bullpgia

@@ -7,9 +7,22 @@ namespace bullpgia
 
 class SmartGuesser : public bullpgia::Guesser
 {
-     void startNewGame(uint length);
+     private:
+     string best;
+     string current;
+     uint size=0;
+     uint start;
+     uint end;
+     uint bbull;
+     uint bpgia;
+     uint cbull;
+     uint cpgia;
+     int count[10]; 
+     string switchCase();
+     public:
+     void startNewGame(uint length) override;
      string guess()override;
-     void learn(int reply);
+     void learn(string reply)override;
 			
 };
 }; // namespace bullpgia

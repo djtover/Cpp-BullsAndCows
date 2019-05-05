@@ -129,16 +129,29 @@ string SmartGuesser::guess()
             start = 0;
             end = 1;
         }
+        ans = best;
+        while(ans[start] == ans[end]){
+            if(end < length-1){
+                end++;
+            }
+            else{
+                start++;
+                end = start + 1;
+            }
+            // cout<<"hello"<<endl;
+        }
         if(end < length){
-            ans = best;
+            // ans = best;
             std::swap(ans[start], ans[end]);
             end++;
         }
         else{
             start++;
             end = start + 1;
-            ans = best;
+            // ans = best;
             std::swap(ans[start], ans[end]);
+            // start++;
+            // end = start + 1;
         }
 
     }

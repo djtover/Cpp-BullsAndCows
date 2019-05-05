@@ -126,15 +126,14 @@ string SmartGuesser::guess()
         }
         if(end < length){
             ans = best;
-            std::swap(best[start], best[end]);
-            ans.swap(best); 
+            std::swap(ans[start], ans[end]);
+            end++;
         }
         else{
             start++;
             end = start + 1;
             ans = best;
-            std::swap(best[start], best[end]);
-            ans.swap(best);
+            std::swap(ans[start], ans[end]);
         }
 
     }

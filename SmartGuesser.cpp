@@ -96,7 +96,6 @@ void SmartGuesser::learn(string reply)
     string p = reply.substr(i+1,reply.length());
     cbull = std::stoi(b);
     cpgia = std::stoi(p);
-
     if(size<=10){
         count[size-1]=cbull;
     }

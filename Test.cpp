@@ -135,7 +135,7 @@ int main() {
 	
 testcase.setname("testing smartguesser within 34 guesses");
 		for (uint i=0; i<100; ++i) {
-			testcase.CHECK_EQUAL(play(randy, smarty, 10, 250)<=250, true);  // smarty should always win in at most 10 turns!
+			testcase.CHECK_EQUAL(play(randy, smarty, 10, 231)<=231, true);  // smarty should always win in at most 10 turns!
 		}
 		testcase.setname("testing smartguesser within 34 guesses");
 		for (uint i=0; i<100; ++i) {

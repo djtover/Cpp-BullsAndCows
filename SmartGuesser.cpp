@@ -141,20 +141,17 @@ string SmartGuesser::guess()
            
         }
         if(end < length){
-            
             std::swap(ans[start], ans[end]);
-            end++;
         }
         else{
             start++;
             end = start + 1;
-            
             std::swap(ans[start], ans[end]);
-            end++;
+            
         }
+        end++;
 
     }
-   
     current = ans;
     size++;
     return current;

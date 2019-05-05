@@ -17,7 +17,6 @@ class SmartGuesser : public bullpgia::Guesser
      uint bpgia;
      uint cbull;
      uint cpgia;
-     uint sumBull=0;
      int count[10]; 
      string switchCase();
      public:

@@ -99,6 +99,7 @@ void SmartGuesser::learn(string reply)
 
     if(size<=10){
         count[size-1]=cbull;
+        sumBull = sumBull + cbull;
     }
 }
 // Guess method
@@ -106,7 +107,7 @@ string SmartGuesser::guess()
 {
     // Less than 10 guesses
     string ans="";
-    if (size < 10)
+    if (size < 10 && sumBull != length)
     {
         ans = switchCase();
     }
